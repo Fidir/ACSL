@@ -1,0 +1,76 @@
+eaabc={'1':'','2':'','3':'','4':'','5':'','6':'','7':'','8':'','9':''}
+
+row1=['1','2','3']
+row2=['4','5','6']
+row3=['7','8','9']
+column1=['1','4','7']
+column2=['2','5','8']
+column3=['3','6','9']
+iot=0
+specinp=str(input("Enter number of characters, then positions of characters with the letter"))
+specinp=specinp.replace(specinp[0],'',1)
+specinp=specinp.replace(',','')
+print (specinp)
+while iot < len(specinp):
+  eaabc[specinp[iot]]=specinp[iot+1]
+  iot+=2
+rowcheck=[1,2,3]
+colcheck=[1,4,7]
+while '' in eaabc.values():
+  for gothrmisvals in eaabc:
+    poss=['A','B','C']
+    if eaabc[gothrmisvals] == '':
+      if int(gothrmisvals) <4:
+        for findval in row1:
+          if eaabc[findval] != '':
+            poss.remove(eaabc[findval])
+        if gothrmisvals == '1':
+          for find1 in column1:
+            if eaabc[find1] != '' and eaabc[find1] in poss:
+              poss.remove(eaabc[find1])
+        elif gothrmisvals == '2':
+          for find2 in column2:
+            if eaabc[find2] != '' and eaabc[find2] in poss:
+              poss.remove(eaabc[find2])
+        elif gothrmisvals == '3':
+          for find3 in column3:
+            if eaabc[find3] != '' and eaabc[find3] in poss:
+              poss.remove(eaabc[find3])
+      elif gothrmisvals in row2:
+        for findval in row2:
+          if eaabc[findval] != '':
+            poss.remove(eaabc[findval])
+        if gothrmisvals == '4':
+          for find1 in column1:
+            if eaabc[find1] != '' and eaabc[find1] in poss:
+              poss.remove(eaabc[find1])
+        elif gothrmisvals == '5':
+          for find2 in column2:
+            if eaabc[find2] != '' and eaabc[find2] in poss:
+              poss.remove(eaabc[find2])
+        elif gothrmisvals == '6':
+          for find3 in column3:
+            if eaabc[find3] != '' and eaabc[find3] in poss:
+              poss.remove(eaabc[find3])
+      elif gothrmisvals in row3:
+        
+      if len(poss) == 1:
+        eaabc[gothrmisvals]=poss[0]
+def simpliftwoval(row):
+  for findval in row:
+    if eaabc[findval] != '':
+      poss.remove(eaabc[findval])
+  if gothrmisvals == row[0]:
+    for find1 in column1:
+      if eaabc[find1] != '' and eaabc[find1] in poss:
+        poss.remove(eaabc[find1])
+  elif gothrmisvals == row[1]:
+    for find2 in column2:
+      if eaabc[find2] != '' and eaabc[find2] in poss:
+        poss.remove(eaabc[find2])
+  elif gothrmisvals == row[2]:
+    for find3 in column3:
+      if eaabc[find3] != '' and eaabc[find3] in poss:
+        poss.remove(eaabc[find3])
+print (eaabc)
+#3,1,A,3,C,8,A
